@@ -1,8 +1,11 @@
 # just.swiss 클론코딩 하기.
 
 1. nav바 만들기
+
    navbar 만들기 전에 grid 시스템으로 navbar도 할 수 있는지?
+
    모바일 먼저 만들고 => PC 만들기.
+
    nav바는 그냥 flex를 쓰고, 안에 레이아웃만 grid로.
 
 2. 그리드
@@ -12,3 +15,7 @@
 
 3. 프리티어 설치하기 및 세팅
    https://velog.io/@byjihye/svelte-install
+
+
+4. 모달
+https://svelte.dev/tutorial/actions
