@@ -31,12 +31,10 @@
 </div>
 
 <style lang="scss">
-  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap");
-
-  $color--white : #FFF;
-  $color--primary : #2553a0;
-
+  .container {
+    font-family: 'Pretendard';
+  }
+  
   small {
     display: block;
     font-family: "Noto Serif KR", serif;

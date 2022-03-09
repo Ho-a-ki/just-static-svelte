@@ -1,8 +1,9 @@
 <script>
-  import { onMount } from 'svelte';
-  import { fade, fly } from "svelte/transition";
-  import Main from '../components/Main.svelte'
-  import About from '../components/About.svelte'
+import { onMount } from 'svelte';
+import { fade, fly } from "svelte/transition";
+import Main from './components/Main.svelte'
+import About from './components/About.svelte'
+import Footer from './components/Footer.svelte';
 
   let mobileMenuView = false;
   let headerVisible = true;
@@ -104,15 +105,15 @@
     </header>
     {/if}
   </div>
-  <div class="content">
-    <About />
-  </div>
 </main>
+<Main />
+<Footer/>
 
 
 <style>
   @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
   @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap");
+  /* @import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"); */
   /* 공통 부분 */
   main {
     --main-color: #2553a0;
