@@ -1,6 +1,9 @@
 <script>
   import { onMount } from 'svelte';
   import { fade, fly } from "svelte/transition";
+  import Main from '../components/Main.svelte'
+  import About from '../components/About.svelte'
+
   let mobileMenuView = false;
   let headerVisible = true;
   let notice = false
@@ -102,8 +105,7 @@
     {/if}
   </div>
   <div class="content">
-  </div>
-  <div class="content">
+    <About />
   </div>
 </main>
 
