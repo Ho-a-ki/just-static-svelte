@@ -19,3 +19,12 @@
 
 4. 모달
 https://svelte.dev/tutorial/actions
+
+SCSS 세팅에 참고한 블로그들
+
+1. 
+https://beomy.github.io/tech/svelte/svelte-ts-scss/#scss-%EC%84%A4%EC%A0%95
+
+svelte.config.js 생성하였음.
+
+2. SCSS VS CODE 확장 설치
