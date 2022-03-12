@@ -31,7 +31,10 @@
 </div>
 
 <style lang="scss">
-  .container {
+
+.container {
+    padding-top: 120px;
+    background-color: $color--white;
     font-family: 'Pretendard';
   }
   
@@ -104,6 +107,11 @@
       background-color: #f2f7ff;
     }
   }
+
+  
+@media screen and (min-width: 700px) {
+
+}
 
   
 </style>

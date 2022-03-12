@@ -113,7 +113,6 @@
 
 <style lang="scss">
   @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap");
   /* 공통 부분 */
   $color--white: #FFF;
   $color--white-60: rgba($color--white, .6);

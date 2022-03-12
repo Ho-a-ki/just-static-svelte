@@ -1,124 +1,87 @@
-
-<script lang="ts">
-    import { get } from 'svelte/store'
-    import { fade, fly, slide } from "svelte/transition";
-    // import { headerVisible } from '../store/nav';
-
-    // import { headerVisible , mobileMenuVisible } from '../store/nav.js'
-    // $ : mobileMenuVisible
-    let mobileMenuView :Boolean = false
-
-    let y = 0;
-    let offset = 0;
-    let lastY = 0;
-    let tolerance = 0;
-    let headerVisible = true
-    $: headerClass = updateClass(y);
-    // $: udpateHeaderVisible(y);
-
-    function udpateHeaderVisible(y) {
-        let offset = 0;
-        const dy = lastY - y;
-        lastY = y;
-        if (y < offset) {
-            headerVisible = false
-        }
-        
-        if (dy < 0) {
-            headerVisible = false
-        }
-
-        headerVisible = true
-
-        console.log(y)
-        return y
-    }
-
-    function updateClass(y) {
-        const dy = lastY - y;
-        lastY = y;
-        return deriveClass(y, dy);
-    }
-
-    function deriveClass(y, dy) {
-    if (y < offset) {
-        headerVisible = false
-    }
-
-    if (Math.abs(dy) <= tolerance) {
-        return headerClass;
-    }
-
-    if (dy < 0) {
-        headerVisible = false
-        return "";
-    }
-    
-    headerVisible = true
-    return "";
-    }
-    
-</script>
-
-
-<svelte:window bind:scrollY={y} />
-
-<div>
-    <div class="notice">
-        <div class="title">택배 파업 안내
-            <span>더보기</span>
+<header>
+    <div class="wrapper">
+        <div class="left-items">
+            <ul>
+                <li><a href="">브랜드</a></li>
+                <span>|</span>
+                <li><a href="">스토어</a></li>
+                <span>|</span>
+                <li><a href="">허브 백과사전</a></li>
+            </ul>
         </div>
-        <div class="content">택배 파업 안내 : 현재 한진 택배 일부지역 파업으로 인해 배송이 지연되거나 반송될 수 있습니다.</div>
+        <div class="center-items">
+            <div id="logo">
+                <img src="images/top-logo.svg" alt="">
+            </div>
+        </div>
+        <div class="right-items">
+            <ul>
+                <li><a href="">제품 철학</a></li>
+                <span>|</span>
+                <li><a href="">제품 찾기</a></li>
+                <span>|</span>
+                <li><a href="">연락</a></li>
+            </ul>
+        </div>
     </div>
-    
-    {#if mobileMenuView}
-    <div class="mobile-menu">
-        <ul>
-            <li>About</li>
-            <li>Contact</li>
-            <li>Meet the team</li>
-        </ul>
-    </div>
-    {/if}
-</div>
-
-{#if headerVisible}
-<header transition:fly="{{ y: -50, duration: 400 }}">
-    <div id="logo">
-        <a href="/#">
-            <img src="images/top-logo.svg" alt="" />
-        </a>
-    </div>
-    <div class="menu-bar">menu</div>
 </header>
-{/if}
 
+<style lang="scss">
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-<style lang='scss'>
-    $header--size: 150px;
-    $color--white : #FFF;
+  img {
+  width: 100%;
+  }
 
-    img {
-        width: 100%;
-    }
+  a {
+  color: black;
+  text-decoration: none;
+  }
 
-    .notice {
-        display: none;
-    }
+  header {
+  max-width: 1440px;
+  margin: 0 auto;
+  font-family: "Pretendard";
+  background-color: rgb(255, 255, 255);
+  }
 
-    header {
-        padding: 10px 20px;
-        top: 0;
-        position: sticky;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: $header--size;
-        background-color: $color--white;
-        div {
-            width: $header--size;
-            text-align: center;
-        }
-    }
+  div.wrapper {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div > div#logo {
+      box-sizing: border-box;
+      padding: 30px;
+      width: 200px;
+  }
+  div {
+      text-align: center;
+      ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+          color: rgba(black, 0.2);
+      }
+      li {
+          flex: auto;
+          position: relative;
+          padding: 30px 0;
+          margin: 0 30px;
+
+          &:hover::after {
+          content: '';
+          left: 10%;
+          top: 100%;
+          position: absolute;
+          width: 75%;
+          height: 3px;
+          background-color: #2553a0;
+          }
+      }
+      }
+  }
+  }
 </style>
-
